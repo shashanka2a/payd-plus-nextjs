@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   description: "From business invoices to creator tips to global transfers — all unified in Payd.plus.",
   keywords: ["payments", "fintech", "crypto", "fiat", "transfers", "invoices"],
   authors: [{ name: "Payd.plus" }],
+  icons: {
+    icon: "/logo.svg",
+    shortcut: "/logo.svg",
+    apple: "/logo.svg",
+  },
   openGraph: {
     title: "Payd.plus - Your Payments, Simplified",
     description: "From business invoices to creator tips to global transfers — all unified in Payd.plus.",
