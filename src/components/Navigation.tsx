@@ -14,7 +14,7 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-gradient-to-br from-violet-600 to-cyan-500 rounded-lg" />
+          <img src="/logo.svg" alt="Payd.plus Logo" className="w-8 h-8" />
           <span className="text-lg text-white">Payd.plus</span>
         </div>
 
