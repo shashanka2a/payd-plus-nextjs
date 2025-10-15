@@ -142,7 +142,7 @@ export function Hero() {
           <Button
             size="lg"
             variant="outline"
-            className="border-white/30 bg-white text-black hover:bg-white hover:text-black hover:border-white/30 px-10 py-6 text-base"
+            className="border-white/30 bg-white/10 text-white hover:bg-white/20 hover:text-white hover:border-white/50 px-10 py-6 text-base"
           >
             <Play className="w-4 h-4 mr-2" />
             View Demo

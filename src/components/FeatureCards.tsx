@@ -64,50 +64,52 @@ export function FeatureCards() {
               transition={{ duration: 0.6, delay: index * 0.15 }}
               className="group"
             >
-              <div className="relative h-full">
-                {/* Glow effect on hover */}
-                <div 
-                  className={`absolute -inset-0.5 bg-gradient-to-r ${feature.gradient} rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500`}
-                />
-                
-                <div className="relative bg-[#1A1A28]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full group-hover:border-white/20 group-hover:bg-[#1A1A28] transition-all duration-300">
-                  {/* Icon */}
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <feature.icon className="w-8 h-8 text-white" />
+              <a 
+                href={feature.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block h-full"
+              >
+                <div className="relative h-full">
+                  {/* Glow effect on hover */}
+                  <div 
+                    className={`absolute -inset-0.5 bg-gradient-to-r ${feature.gradient} rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500`}
+                  />
+                  
+                  <div className="relative bg-[#1A1A28]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full group-hover:border-white/20 group-hover:bg-[#1A1A28] transition-all duration-300 cursor-pointer">
+                    {/* Icon */}
+                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                      <feature.icon className="w-8 h-8 text-white" />
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="mb-4 text-white">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-400 leading-relaxed mb-6">
+                      {feature.description}
+                    </p>
+
+                    {/* Feature list */}
+                    <ul className="space-y-2 mb-6">
+                      {feature.features.map((item, i) => (
+                        <li key={i} className="flex items-center gap-2 text-sm text-gray-400">
+                          <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${feature.gradient}`} />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Visit link */}
+                    <div className="flex items-center gap-2 text-sm group/link">
+                      <span className={`bg-gradient-to-r ${feature.gradient} bg-clip-text text-transparent group-hover/link:opacity-80 transition-opacity`}>
+                        Visit {feature.title}
+                      </span>
+                      <ArrowRight className="w-4 h-4 text-violet-400 group-hover/link:translate-x-1 transition-transform" />
+                    </div>
                   </div>
-
-                  {/* Content */}
-                  <h3 className="mb-4 text-white">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-400 leading-relaxed mb-6">
-                    {feature.description}
-                  </p>
-
-                  {/* Feature list */}
-                  <ul className="space-y-2 mb-6">
-                    {feature.features.map((item, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-gray-400">
-                        <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${feature.gradient}`} />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* Learn more link */}
-                  <a 
-                    href={feature.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm group/link"
-                  >
-                    <span className={`bg-gradient-to-r ${feature.gradient} bg-clip-text text-transparent group-hover/link:opacity-80 transition-opacity`}>
-                      Visit {feature.title}
-                    </span>
-                    <ArrowRight className="w-4 h-4 text-violet-400 group-hover/link:translate-x-1 transition-transform" />
-                  </a>
                 </div>
-              </div>
+              </a>
             </motion.div>
           ))}
         </div>
